@@ -1,0 +1,7 @@
+name: "BoltCommandAliases"
+main: net.okocraft.boltcommandaliases.BoltCommandAliasesPlugin
+version: ${project.version}
+author: "Siroshun09"
+api-version: "1.13"
+folia-supported: true
+depend: [ "Bolt" ]
