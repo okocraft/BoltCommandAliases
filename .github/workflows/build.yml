@@ -6,6 +6,6 @@ jobs:
     uses: okocraft/workflows/.github/workflows/maven.yml@v1
     with:
       java-version: '21'
-      package-name: Box-Build-${{ github.run_number }}
+      package-name: BoltCommandAliases-Build-${{ github.run_number }}
       artifact-directory: "./target"
       upload-test-results: false
