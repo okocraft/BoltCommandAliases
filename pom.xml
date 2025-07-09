@@ -6,7 +6,7 @@
 
     <groupId>net.okocraft.boltcommandaliases</groupId>
     <artifactId>boltcommandaliases</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <name>BoltCommandAliases</name>
     <url>https://github.com/okocraft/BoltCommandAliases</url>
