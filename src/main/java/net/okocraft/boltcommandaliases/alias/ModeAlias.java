@@ -1,12 +1,12 @@
 package net.okocraft.boltcommandaliases.alias;
 
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.okocraft.boltcommandaliases.locale.NativeBoltComponents;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.popcraft.bolt.command.Arguments;
 import org.popcraft.bolt.lang.Translation;
-import org.popcraft.bolt.lib.net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
-import org.popcraft.bolt.util.BoltComponents;
 import org.popcraft.bolt.util.Mode;
 
 import java.util.Collections;
@@ -30,7 +30,7 @@ public class ModeAlias extends AbstractBoltCommandAlias {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String label, @NotNull String @NotNull [] args) {
         if (!(sender instanceof Player player)) {
-            BoltComponents.sendMessage(sender, Translation.COMMAND_PLAYER_ONLY);
+            NativeBoltComponents.sendMessage(sender, Translation.COMMAND_PLAYER_ONLY);
             return true;
         }
 
@@ -64,10 +64,10 @@ public class ModeAlias extends AbstractBoltCommandAlias {
         if (on ^ hasMode) {
             this.originalCommand.execute(sender, new Arguments(this.mode.name()));
         } else {
-            BoltComponents.sendMessage(
+            NativeBoltComponents.sendMessage(
                     player,
                     hasMode ? Translation.MODE_ENABLED : Translation.MODE_DISABLED,
-                    Placeholder.component(Translation.Placeholder.MODE, BoltComponents.resolveTranslation("mode_%s".formatted(this.mode.name().toLowerCase()), player))
+                    Placeholder.component(Translation.Placeholder.MODE, NativeBoltComponents.resolveTranslation("mode_%s".formatted(this.mode.name().toLowerCase()), player))
             );
         }
 
