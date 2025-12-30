@@ -1,6 +1,5 @@
 package net.okocraft.boltcommandaliases.alias;
 
-import net.okocraft.boltcommandaliases.locale.NativeBoltComponents;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.popcraft.bolt.BoltPlugin;
 import org.popcraft.bolt.command.BoltCommand;
 import org.popcraft.bolt.lang.Translation;
+import org.popcraft.bolt.util.BoltComponents;
 
 import java.util.Objects;
 
@@ -32,7 +32,7 @@ public abstract class AbstractBoltCommandAlias extends Command {
         if (sender.hasPermission(COMMAND_PERMISSION_KEY + this.originalCommandName)) {
             return true;
         } else {
-            NativeBoltComponents.sendMessage(sender, Translation.COMMAND_NO_PERMISSION);
+            BoltComponents.sendMessage(sender, Translation.COMMAND_NO_PERMISSION);
             return false;
         }
     }
